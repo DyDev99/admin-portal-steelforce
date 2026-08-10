@@ -68,19 +68,19 @@ const customerGrowthData = [
 ];
 
 const provinceData = [
-  { province: 'Tehran', sales: 420, percentage: 35 },
-  { province: 'Isfahan', sales: 280, percentage: 23 },
-  { province: 'Fars', sales: 195, percentage: 16 },
-  { province: 'Khorasan', sales: 165, percentage: 14 },
-  { province: 'Azerbaijan', sales: 130, percentage: 12 },
+  { province: 'Phnom Penh', sales: 420, percentage: 35 },
+  { province: 'Siem Reap', sales: 280, percentage: 23 },
+  { province: 'Battambang', sales: 195, percentage: 16 },
+  { province: 'Preah Sihanouk', sales: 165, percentage: 14 },
+  { province: 'Kandal', sales: 130, percentage: 12 },
 ];
 
 const recentOrders = [
-  { id: 'ORD-2845', customer: 'Pars Steel Co.', rep: 'Ahmad Reza', date: 'Aug 6, 2026', status: 'Confirmed', total: 24500, payment: 'Paid' },
-  { id: 'ORD-2844', customer: 'Mobarakeh Steel', rep: 'Sara Karimi', date: 'Aug 6, 2026', status: 'Processing', total: 38200, payment: 'Pending' },
-  { id: 'ORD-2843', customer: 'Hormozgan Steel', rep: 'Mehdi Ahmadi', date: 'Aug 5, 2026', status: 'Completed', total: 52100, payment: 'Paid' },
-  { id: 'ORD-2842', customer: 'Khouzestan Steel', rep: 'Reza Mohammadi', date: 'Aug 5, 2026', status: 'Pending', total: 18900, payment: 'Unpaid' },
-  { id: 'ORD-2841', customer: 'Esfahan Steel Co.', rep: 'Niloofar S.', date: 'Aug 4, 2026', status: 'Cancelled', total: 9800, payment: 'Refunded' },
+  { id: 'ORD-2845', customer: 'Angkor Trading Co.', rep: 'Sokha Chan', date: 'Aug 6, 2026', status: 'Confirmed', total: 24500, payment: 'Paid' },
+  { id: 'ORD-2844', customer: 'Mekong Steel', rep: 'Sopheak Heng', date: 'Aug 6, 2026', status: 'Processing', total: 38200, payment: 'Pending' },
+  { id: 'ORD-2843', customer: 'Kirirom Logistics', rep: 'Vannak Keo', date: 'Aug 5, 2026', status: 'Completed', total: 52100, payment: 'Paid' },
+  { id: 'ORD-2842', customer: 'Tonle Sap Commerce', rep: 'Bora Meng', date: 'Aug 5, 2026', status: 'Pending', total: 18900, payment: 'Unpaid' },
+  { id: 'ORD-2841', customer: 'Bayon Enterprise', rep: 'Dara Rath', date: 'Aug 4, 2026', status: 'Cancelled', total: 9800, payment: 'Refunded' },
 ];
 
 const statusColors: Record<string, string> = {

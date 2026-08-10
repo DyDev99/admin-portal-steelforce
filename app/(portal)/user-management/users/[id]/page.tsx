@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { useParams, useRouter, useSearchParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import {
   ArrowLeft,
@@ -21,10 +21,17 @@ import {
   Unlock,
   Send,
 } from 'lucide-react';
+import { toast } from 'sonner';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useI18n } from '@/lib/i18n';
-import { getSupabaseClient } from '@/lib/supabase';
+import {
+  fetchUserById,
+  resetUserPassword,
+  setUserStatus,
+  unlockUser,
+  updateUser,
+} from '@/lib/mock-store';
 import type { AppUserWithRelations } from '@/lib/types';
 
 const statusStyles: Record<string, string> = {
@@ -36,47 +43,33 @@ const statusStyles: Record<string, string> = {
 export default function UserDetailPage() {
   const { id } = useParams();
   const router = useRouter();
-  const searchParams = useSearchParams();
   const { t, formatDate } = useI18n();
   const [user, setUser] = useState<AppUserWithRelations | null>(null);
   const [loading, setLoading] = useState(true);
 
   const fetchUser = useCallback(async () => {
     setLoading(true);
-    const supabase = getSupabaseClient();
-    const { data } = await supabase
-      .from('app_users')
-      .select('*, department:departments(*), role:roles(*)')
-      .eq('id', id as string)
-      .maybeSingle();
-    setUser(data as AppUserWithRelations | null);
+    setUser(await fetchUserById(id as string));
     setLoading(false);
   }, [id]);
 
   useEffect(() => { fetchUser(); }, [fetchUser]);
 
   const handleToggleStatus = async (currentStatus: string) => {
-    const newStatus = currentStatus === 'active' ? 'disabled' : 'active';
-    const supabase = getSupabaseClient();
-    await supabase.from('app_users').update({ account_status: newStatus }).eq('id', id as string);
+    await setUserStatus(id as string, currentStatus === 'active' ? 'disabled' : 'active');
     fetchUser();
   };
 
   const handleLockUnlock = async (currentStatus: string) => {
-    const newStatus = currentStatus === 'locked' ? 'active' : 'locked';
-    const supabase = getSupabaseClient();
-    await supabase.from('app_users').update({ account_status: newStatus, failed_login_attempts: 0 }).eq('id', id as string);
+    if (currentStatus === 'locked') await unlockUser(id as string);
+    else await updateUser(id as string, { account_status: 'locked' });
     fetchUser();
   };
 
   const handleResetPassword = async () => {
     const tempPwd = generatePassword();
-    const supabase = getSupabaseClient();
-    await supabase.from('app_users').update({
-      temp_password: tempPwd,
-      force_password_reset: true,
-      last_password_change: new Date().toISOString(),
-    }).eq('id', id as string);
+    await resetUserPassword(id as string, tempPwd);
+    toast.success(`${t('um.actions.resetPassword')}: ${tempPwd}`, { duration: 10000 });
     fetchUser();
   };
 

@@ -84,7 +84,7 @@ export default function VisitsPage() {
         {/* Visit Cards */}
         <div className="lg:col-span-2 space-y-4">
           <div className="flex items-center justify-between">
-            <h2 className="text-[16px] font-700 text-gray-900" style={{ fontWeight: 700 }}>Today's Visit Cards</h2>
+            <h2 className="text-[16px] font-700 text-gray-900" style={{ fontWeight: 700 }}>Today&apos;s Visit Cards</h2>
             <Button variant="outline" size="sm" className="rounded-xl text-[12px]">
               <Route size={14} className="mr-1.5" /> Daily Route
             </Button>

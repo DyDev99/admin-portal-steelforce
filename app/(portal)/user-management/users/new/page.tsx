@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
   ArrowLeft,
   ArrowRight,
@@ -13,10 +13,11 @@ import {
   Camera,
   RefreshCw,
 } from 'lucide-react';
+import { toast } from 'sonner';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useI18n } from '@/lib/i18n';
-import { getSupabaseClient } from '@/lib/supabase';
+import { createUser, fetchDepartments, fetchRoles } from '@/lib/mock-store';
 import type { Department, Role } from '@/lib/types';
 
 const steps = [
@@ -54,14 +55,12 @@ export default function CreateUserPage() {
   });
 
   useEffect(() => {
-    const fetchData = async () => {
-      const supabase = getSupabaseClient();
-      const { data: depts } = await supabase.from('departments').select('*');
-      setDepartments((depts || []) as Department[]);
-      const { data: rls } = await supabase.from('roles').select('*');
-      setRoles((rls || []) as Role[]);
+    const loadOptions = async () => {
+      const [depts, rls] = await Promise.all([fetchDepartments(), fetchRoles()]);
+      setDepartments(depts);
+      setRoles(rls);
     };
-    fetchData();
+    loadOptions();
   }, []);
 
   const updateForm = (key: string, value: string | boolean) => {
@@ -107,8 +106,7 @@ export default function CreateUserPage() {
 
   const handleCreate = async () => {
     setSaving(true);
-    const supabase = getSupabaseClient();
-    await supabase.from('app_users').insert({
+    await createUser({
       full_name: form.full_name,
       username: form.username,
       email: form.email,
@@ -125,9 +123,10 @@ export default function CreateUserPage() {
       force_password_reset: form.force_password_reset,
       employment_status: form.employment_status,
       account_status: form.account_status,
-      last_password_change: new Date().toISOString(),
     });
     setSaving(false);
+
+    toast.success(t('validation.saved'));
     router.push('/user-management/users');
   };
 
@@ -174,13 +173,12 @@ export default function CreateUserPage() {
           ))}
         </div>
 
-        {/* Step Content */}
-        <AnimatePresence mode="wait">
+        {/* Step Content — enter-only animation; see the note in app-shell.tsx
+            for why `AnimatePresence mode="wait"` is avoided here. */}
+        <div key={step}>
           <motion.div
-            key={step}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.25 }}
           >
             {step === 0 && (
@@ -312,7 +310,7 @@ export default function CreateUserPage() {
               </div>
             )}
           </motion.div>
-        </AnimatePresence>
+        </div>
 
         {/* Navigation */}
         <div className="flex items-center justify-between mt-8">

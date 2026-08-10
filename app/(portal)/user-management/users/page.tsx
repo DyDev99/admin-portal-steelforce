@@ -22,8 +22,8 @@ import {
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useI18n } from '@/lib/i18n';
-import { getSupabaseClient } from '@/lib/supabase';
-import type { AppUserWithRelations, Department, Role } from '@/lib/types';
+import { deleteUsers, fetchUsers, resetUserPassword, setUserStatus } from '@/lib/mock-store';
+import type { AppUserWithRelations } from '@/lib/types';
 import { UserManagementNav } from '@/components/user-management/user-management-nav';
 
 const statusStyles: Record<string, string> = {
@@ -36,8 +36,6 @@ export default function UsersPage() {
   const { t, formatDate } = useI18n();
   const router = useRouter();
   const [users, setUsers] = useState<AppUserWithRelations[]>([]);
-  const [departments, setDepartments] = useState<Department[]>([]);
-  const [roles, setRoles] = useState<Role[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
@@ -49,19 +47,7 @@ export default function UsersPage() {
 
   const fetchData = useCallback(async () => {
     setLoading(true);
-    const supabase = getSupabaseClient();
-    const { data } = await supabase
-      .from('app_users')
-      .select('*, department:departments(*), role:roles(*)')
-      .is('deleted_at', null)
-      .order('created_at', { ascending: false });
-    setUsers((data || []) as AppUserWithRelations[]);
-
-    const { data: depts } = await supabase.from('departments').select('*');
-    setDepartments((depts || []) as Department[]);
-
-    const { data: rls } = await supabase.from('roles').select('*');
-    setRoles((rls || []) as Role[]);
+    setUsers(await fetchUsers());
     setLoading(false);
   }, []);
 
@@ -101,35 +87,26 @@ export default function UsersPage() {
   };
 
   const handleDelete = async (id: string) => {
-    await supabase.from('app_users').update({ deleted_at: new Date().toISOString() }).eq('id', id);
+    await deleteUsers([id]);
     setShowDeleteConfirm(null);
     fetchData();
   };
 
   const handleBulkDelete = async () => {
     if (selected.size === 0) return;
-    await supabase
-      .from('app_users')
-      .update({ deleted_at: new Date().toISOString() })
-      .in('id', Array.from(selected));
+    await deleteUsers(Array.from(selected));
     setSelected(new Set());
     setShowBulkBar(false);
     fetchData();
   };
 
   const handleToggleStatus = async (id: string, currentStatus: string) => {
-    const newStatus = currentStatus === 'active' ? 'disabled' : 'active';
-    await supabase.from('app_users').update({ account_status: newStatus }).eq('id', id);
+    await setUserStatus(id, currentStatus === 'active' ? 'disabled' : 'active');
     fetchData();
   };
 
   const handleResetPassword = async (id: string) => {
-    const tempPwd = generatePassword();
-    await supabase.from('app_users').update({
-      temp_password: tempPwd,
-      force_password_reset: true,
-      last_password_change: new Date().toISOString(),
-    }).eq('id', id);
+    await resetUserPassword(id, generatePassword());
     fetchData();
   };
 

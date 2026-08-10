@@ -6,7 +6,7 @@ import { Shield, Plus, Lock, Users } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useI18n } from '@/lib/i18n';
-import { getSupabaseClient } from '@/lib/supabase';
+import { fetchRoles, fetchUserCountsByRole } from '@/lib/mock-store';
 import type { Role } from '@/lib/types';
 import { UserManagementNav } from '@/components/user-management/user-management-nav';
 
@@ -16,22 +16,15 @@ export default function RolesPage() {
   const [userCounts, setUserCounts] = useState<Record<string, number>>({});
   const [loading, setLoading] = useState(true);
 
-  const fetchRoles = useCallback(async () => {
+  const loadRoles = useCallback(async () => {
     setLoading(true);
-    const supabase = getSupabaseClient();
-    const { data } = await supabase.from('roles').select('*').order('is_system', { ascending: false });
-    const rls = (data || []) as Role[];
-    setRoles(rls);
-    const counts: Record<string, number> = {};
-    for (const r of rls) {
-      const { count } = await supabase.from('app_users').select('*', { count: 'exact', head: true }).eq('role_id', r.id).is('deleted_at', null);
-      counts[r.id] = count || 0;
-    }
+    const [nextRoles, counts] = await Promise.all([fetchRoles(), fetchUserCountsByRole()]);
+    setRoles(nextRoles);
     setUserCounts(counts);
     setLoading(false);
   }, []);
 
-  useEffect(() => { fetchRoles(); }, [fetchRoles]);
+  useEffect(() => { loadRoles(); }, [loadRoles]);
 
   const systemRoles = roles.filter((r) => r.is_system);
   const customRoles = roles.filter((r) => !r.is_system);

@@ -86,10 +86,13 @@ export const PERMISSION_MODULES = [
   'settings',
 ] as const;
 
+// Must cover every action value present in roles.permissions, otherwise the
+// permissions matrix would drop unlisted actions when a role is saved.
 export const PERMISSION_ACTIONS = [
   'view',
   'create',
   'edit',
+  'update',
   'delete',
   'export',
   'manage',

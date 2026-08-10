@@ -11,14 +11,11 @@
   "nav.notifications": "ការជូនដំណឹង",
   "nav.profile": "ប្រវត្តិរូប",
   "nav.settings": "ការកំណត់",
-
   "breadcrumb.home": "ទំព័រដើម",
-
   "header.search": "ស្វែងរកទាំងអស់...",
   "header.notifications": "ការជូនដំណឹង",
   "header.messages": "សារ",
   "header.salesManager": "អ្នកគ្រប់គ្រងលក់",
-
   "page.dashboard.title": "ផ្ទាំងគ្រប់គ្រង",
   "page.dashboard.subtitle": "ទិដ្ឋភាពទូទៅនៃដំណើរការពាណិជ្ជកម្មរបស់អ្នក",
   "page.visits.title": "ការទស្សនា",
@@ -35,7 +32,6 @@
   "page.notifications.subtitle": "សកម្មភាពថ្មីៗរបស់អ្នក",
   "page.profile.title": "ប្រវត្តិរូប",
   "page.profile.subtitle": "ការកំណត់គណនីរបស់អ្នក",
-
   "stat.todaySales": "ការលក់ថ្ងៃនេះ",
   "stat.monthlyRevenue": "ប្រាក់ចំណូលប្រចាំខែ",
   "stat.activeSalesReps": "តំណាងលក់សកម្ម",
@@ -45,7 +41,6 @@
   "stat.collectionToday": "ការប្រមូលថ្ងៃនេះ",
   "stat.totalCustomers": "អតិថិជនសរុប",
   "stat.vsLastMonth": "ធៀបនឹងខែមុន",
-
   "chart.salesRevenue": "ប្រាក់ចំណូលការលក់",
   "chart.salesRevenueDesc": "ប្រាក់ចំណូលប្រចាំខែធៀបនឹងគោលដៅ",
   "chart.revenue": "ប្រាក់ចំណូល",
@@ -65,7 +60,6 @@
   "chart.new": "ថ្មី",
   "chart.conversionRate": "អត្រាបម្លែង",
   "chart.conversionRateDesc": "ការបម្លែងសម្រង់តម្លៃទៅការបញ្ជាទិញ",
-
   "table.orderNumber": "លេខបញ្ជាទិញ",
   "table.customer": "អតិថិជន",
   "table.salesRep": "តំណាងលក់",
@@ -77,7 +71,6 @@
   "table.showing": "បង្ហាញ",
   "table.of": "នៃ",
   "table.orders": "ការបញ្ជាទិញ",
-
   "status.confirmed": "បានបញ្ជាក់",
   "status.processing": "កំពុងដំណើរការ",
   "status.completed": "បានបញ្ចប់",
@@ -92,7 +85,6 @@
   "status.refunded": "បានសងប្រាក់",
   "status.partial": "បង់មួយផ្នែក",
   "status.active": "សកម្ម",
-
   "filter.all": "ទាំងអស់",
   "filter.filters": "តម្រង",
   "button.save": "រក្សាទុក",
@@ -108,11 +100,9 @@
   "button.addCustomer": "បន្ថែមអតិថិជន",
   "button.search": "ស្វែងរក",
   "button.filter": "តម្រង",
-
   "search.orders": "ស្វែងរកការបញ្ជាទិញ...",
   "search.customers": "ស្វែងរកអតិថិជន...",
   "search.reps": "ស្វែងរកតំណាង...",
-
   "customer.creditLimit": "ដែនកំណត់ឥណទាន",
   "customer.outstanding": "នៅសល់",
   "customer.lifetimeRevenue": "ប្រាក់ចំណូលសរុប",
@@ -126,14 +116,12 @@
   "customer.phone": "ទូរស័ព្ទ",
   "customer.location": "ទីតាំង",
   "customer.rep": "តំណាងលក់",
-
   "tab.overview": "ទិដ្ឋភាពទូទៅ",
   "tab.orders": "ការបញ្ជាទិញ",
   "tab.quotations": "សម្រង់តម្លៃ",
   "tab.visits": "ការទស្សនា",
   "tab.payments": "ការបង់ប្រាក់",
   "tab.activities": "សកម្មភាព",
-
   "notif.orderApproved": "ការបញ្ជាទិញបានអនុមត្ត",
   "notif.orderApprovedDesc": "ORD-2845 បានអនុមត្ត",
   "notif.quotationRejected": "សម្រង់តម្លៃបានបដិសេធ",
@@ -150,7 +138,6 @@
   "notif.quotationApproved": "សម្រង់តម្លៃបានអនុមត្ត",
   "notif.visitCompleted": "ការទស្សនាបានបញ្ចប់",
   "notif.paymentReceived": "បានទទួលការបង់ប្រាក់",
-
   "visit.todaySchedule": "កាលវិភាគថ្ងៃនេះ",
   "visit.checkIn": "ចូល",
   "visit.checkOut": "ចេញ",
@@ -161,7 +148,6 @@
   "visit.upcoming": "នៅពេលខាងមុខ",
   "visit.completed": "បានបញ្ចប់",
   "visit.missed": "បានខកខាន",
-
   "rep.performance": "ដំណើរការ",
   "rep.target": "គោលដៅ",
   "rep.attendance": "ការចូលធ្វើការ",
@@ -169,7 +155,6 @@
   "rep.offline": "ក្រៅបណ្តាញ",
   "rep.revenue": "ប្រាក់ចំណូល",
   "rep.ordersCount": "ការបញ្ជាទិញ",
-
   "quotation.pipeline": "ប្រព័ន្ធ",
   "quotation.discount": "បញ្ចុះតម្លៃ",
   "quotation.pricing": "តម្លៃ",
@@ -179,7 +164,6 @@
   "quotation.approved": "បានអនុមត្ត",
   "quotation.rejected": "បានបដិសេធ",
   "quotation.converted": "បានបម្លែង",
-
   "profile.personal": "ផ្ទាល់ខ្លួន",
   "profile.security": "សន្តិសុខ",
   "profile.sessions": "សេស្សន",
@@ -192,14 +176,12 @@
   "profile.address": "អាសយដ្ឋាន",
   "profile.company": "ក្រុមហ៊ុន",
   "profile.notes": "កំណត់សម្គាល់",
-
   "validation.required": "ត្រូវការ",
   "validation.invalidEmail": "អ៊ីមែលមិនត្រឹមត្រូវ",
   "validation.passwordTooShort": "ពាក្យសម្ងាត់ខ្លីពេក",
   "validation.saved": "បានរក្សាទុកដោយជោគជ័យ",
   "validation.networkError": "បណ្តាញមានបញ្ហា",
   "validation.accessDenied": "មិនមានសិទ្ធិចូលប្រើ",
-
   "dialog.confirmDelete": "បញ្ជាក់ការលុប",
   "dialog.saveChanges": "រក្សាទុកការផ្លាស់ប្តូរ",
   "dialog.logout": "ចាកចេញ",
@@ -208,17 +190,13 @@
   "dialog.error": "កំហុស",
   "dialog.confirm": "បញ្ជាក់",
   "dialog.cancel": "បោះបង់",
-
   "theme.light": "ពន្លឺ",
   "theme.dark": "ងងឹត",
   "theme.system": "ប្រព័ន្ធ",
-
   "language.english": "English",
   "language.khmer": "ភាសាខ្មែរ",
   "language.label": "ភាសា",
-
   "nav.userManagement": "ការគ្រប់គ្រងអ្នកប្រើ",
-
   "um.title": "ការគ្រប់គ្រងអ្នកប្រើ",
   "um.subtitle": "គ្រប់គ្រងអ្នកប្រើ តួនាទី សិទ្ធិ និងផ្នែក",
   "um.tab.users": "អ្នកប្រើ",
@@ -227,7 +205,6 @@
   "um.tab.departments": "ផ្នែក",
   "um.tab.activityLogs": "កំណត់ហេតុសកម្មភាព",
   "um.tab.loginHistory": "ប្រវត្តិចូល",
-
   "um.users.title": "អ្នកប្រើ",
   "um.users.subtitle": "គ្រប់គ្រងគណនីអ្នកប្រើទាំងអស់",
   "um.users.addUser": "បន្ថែមអ្នកប្រើ",
@@ -240,7 +217,6 @@
   "um.users.selectAll": "ជ្រើសរើសទាំងអស់",
   "um.users.selected": "បានជ្រើសរើស",
   "um.users.noResults": "មិនឃើញអ្នកប្រើ",
-
   "um.col.avatar": "រូបភាព",
   "um.col.fullName": "ឈ្មោះពេញ",
   "um.col.employeeId": "លេខបុគ្គិក",
@@ -264,12 +240,10 @@
   "um.col.accountStatus": "ស្ថានភាពគណនី",
   "um.col.lastPasswordChange": "ផ្លាស់ប្តូរពាក្យសម្ងាត់ចុងក្រោយ",
   "um.col.failedAttempts": "ការព្យាយាមចូលបរាជ័យ",
-
   "um.status.active": "សកម្ម",
   "um.status.disabled": "បិទ",
   "um.status.locked": "ចាក់សោ",
   "um.status.archived": "ទុកក្នុងប័ណ្ណសារ",
-
   "um.actions.view": "មើល",
   "um.actions.edit": "កែប្រែ",
   "um.actions.delete": "លុប",
@@ -291,7 +265,6 @@
   "um.actions.viewActivityLogs": "មើលកំណត់ហេតុសកម្មភាព",
   "um.actions.archive": "ទុកក្នុងប័ណ្ណសារ",
   "um.actions.permanentDelete": "លុបអចិន្ត្រៃយ៍",
-
   "um.bulk.title": "សកម្មភាពច្រើន",
   "um.bulk.delete": "លុបដែលបានជ្រើសរើស",
   "um.bulk.activate": "បើកដែលបានជ្រើសរើស",
@@ -301,7 +274,6 @@
   "um.bulk.assignDepartment": "ផ្ដល់ផ្នែក",
   "um.bulk.export": "នាំចេញដែលបានជ្រើសរើស",
   "um.bulk.archive": "ទុកក្នុងប័ណ្ណសារដែលបានជ្រើសរើស",
-
   "um.create.title": "បង្កើតអ្នកប្រើថ្មី",
   "um.create.editTitle": "កែប្រែអ្នកប្រើ",
   "um.create.step.general": "ទូទៅ",
@@ -337,13 +309,11 @@
   "um.create.passwordGood": "ល្អ",
   "um.create.passwordStrong": "ខ្លាំង",
   "um.create.passwordPolicy": "ពាក្យសម្ងាត់ត្រូវមាន ៨-១២ តួអក្សរ មានអក្សរធំ អក្សរតូច លេខ និងសញ្ញាពិសេស",
-
   "um.delete.title": "លុបអ្នកប្រើ",
   "um.delete.message": "តើអ្នកប្រាកដថាចង់លុបអ្នកប្រើនេះទេ? គណនីនឹងត្រូវទុកក្នុងប័ណ្ណសារ និងអាចស្តារវិញបាននៅពេលក្រោយ។",
   "um.delete.permanentMessage": "ការព្រមាន៖ នេះនឹងលុបគណនីអ្នកប្រើអចិន្ត្រៃយ៍។ សកម្មភាពនេះមិនអាចត្រឡប់វិញបានទេ។",
   "um.delete.confirm": "លុប",
   "um.delete.cancel": "បោះបង់",
-
   "um.roles.title": "តួនាទី",
   "um.roles.subtitle": "គ្រប់គ្រងតួនាទីនិងសិទ្ធិរបស់ពួកគេ",
   "um.roles.addRole": "បន្ថែមតួនាទី",
@@ -356,7 +326,6 @@
   "um.roles.totalRoles": "តួនាទីសរុប",
   "um.roles.systemRoles": "តួនាទីប្រព័ន្ធ",
   "um.roles.customRoles": "តួនាទីផ្ទាល់ខ្លួន",
-
   "um.perms.title": "តារាងសិទ្ធិ",
   "um.perms.subtitle": "កំណត់ការគ្រប់គ្រងសិទ្ធិតាមតួនាទី",
   "um.perms.module": "ម៉ូឌុល",
@@ -374,7 +343,6 @@
   "um.perms.users": "អ្នកប្រើ",
   "um.perms.reports": "របាយការ",
   "um.perms.settings": "ការកំណត់",
-
   "um.dept.title": "ផ្នែក",
   "um.dept.subtitle": "គ្រប់គ្រងផ្នែកអង្គការ",
   "um.dept.addDepartment": "បន្ថែមផ្នែក",
@@ -386,7 +354,6 @@
   "um.dept.totalDepartments": "ផ្នែកសរុប",
   "um.dept.deleteTitle": "លុបផ្នែក",
   "um.dept.deleteMessage": "តើអ្នកប្រាកដថាចង់លុបផ្នែកនេះទេ? អ្នកប្រើក្នុងផ្នែកនេះនឹងត្រូវការផ្ដល់ផ្នែកថ្មី។",
-
   "um.logs.title": "កំណត់ហេតុសកម្មភាព",
   "um.logs.subtitle": "ដានត្រួតពិនិត្យនៃសកម្មភាពរដ្ឋបាលទាំងអស់",
   "um.logs.col.date": "កាលបរិច្ឆេទ",
@@ -399,7 +366,6 @@
   "um.logs.search": "ស្វែងរកកំណត់ហេតុ...",
   "um.logs.filterAction": "តម្រងតាមសកម្មភាព",
   "um.logs.filterStatus": "តម្រងតាមស្ថានភាព",
-
   "um.login.title": "ប្រវត្តិចូល",
   "um.login.subtitle": "តាមដានសកម្មភាពចូលអ្នកប្រើ",
   "um.login.col.loginTime": "ពេលចូល",
@@ -414,12 +380,71 @@
   "um.login.search": "ស្វែងរកប្រវត្តិចូល...",
   "um.login.revoke": "លុបសេស្សន",
   "um.login.activeSessions": "សេស្សនសកម្ម",
-
   "um.detail.personal": "ព័ត៌មានផ្ទាល់ខ្លួន",
   "um.detail.company": "ព័ត៌មានក្រុមហ៊ុន",
   "um.detail.system": "ព័ត៌មានប្រព័ន្ធ",
   "um.detail.security": "សន្តិសុខ",
   "um.detail.back": "ត្រឡប់ទៅអ្នកប្រើ",
   "um.detail.editUser": "កែប្រែអ្នកប្រើ",
-  "um.detail.noLogin": "មិនដែលចូល"
+  "um.detail.noLogin": "មិនដែលចូល",
+  "um.dept.search": "ស្វែងរកផ្នែក...",
+  "um.dept.noResults": "រកមិនឃើញផ្នែក",
+  "um.dept.created": "ផ្នែកត្រូវបានបង្កើត",
+  "um.perms.selectRole": "ជ្រើសរើសតួនាទី",
+  "um.perms.readOnly": "តួនាទីប្រព័ន្ធ — សិទ្ធិអានតែប៉ុណ្ណោះ",
+  "um.perms.saved": "សិទ្ធិត្រូវបានធ្វើបច្ចុប្បន្នភាព",
+  "um.perms.saving": "កំពុងរក្សាទុក...",
+  "um.logs.noResults": "រកមិនឃើញកំណត់ហេតុសកម្មភាព",
+  "um.logs.status.success": "ជោគជ័យ",
+  "um.logs.status.failed": "បរាជ័យ",
+  "um.logs.totalLogs": "ព្រឹត្តិការណ៍សរុប",
+  "um.login.noResults": "រកមិនឃើញកំណត់ត្រាចូលប្រើ",
+  "um.login.stillActive": "នៅសកម្ម",
+  "um.login.totalLogins": "ការចូលប្រើសរុប",
+  "um.login.failedLogins": "ការព្យាយាមបរាជ័យ",
+  "um.login.duration": "រយៈពេល",
+  "common.refresh": "ធ្វើឱ្យស្រស់",
+  "um.perms.update": "ធ្វើបច្ចុប្បន្នភាព",
+  "nav.planning": "ការរៀបចំផែនការ",
+  "page.planning.title": "ការរៀបចំចំណតលក់",
+  "page.planning.subtitle": "រៀបចំ ចាត់តាំង និងតាមដានការទស្សនាថ្ងៃនេះ",
+  "nav.section.main": "ម៉ឺនុយមេ",
+  "nav.section.operations": "ប្រតិបត្តិការ",
+  "nav.section.system": "ប្រព័ន្ធ",
+  "nav.customerList": "បញ្ជីអតិថិជន",
+  "nav.myCustomers": "អតិថិជនរបស់ខ្ញុំ",
+  "nav.newCustomer": "អតិថិជនថ្មី",
+  "nav.sales": "ការលក់",
+  "nav.opportunities": "ឱកាសលក់",
+  "nav.products": "ផលិតផល",
+  "nav.catalog": "កាតាឡុក",
+  "nav.categories": "ប្រភេទ",
+  "nav.inventory": "ស្តុក",
+  "nav.fieldOps": "ប្រតិបត្តិការនៅតំបន់",
+  "nav.routes": "ផ្លូវធ្វើដំណើរ",
+  "nav.checkIn": "ចុះឈ្មោះចូល",
+  "nav.dailyActivities": "សកម្មភាពប្រចាំថ្ងៃ",
+  "nav.reports": "របាយការណ៍",
+  "nav.salesReport": "របាយការណ៍លក់",
+  "nav.visitReport": "របាយការណ៍ទស្សនា",
+  "nav.performance": "ការអនុវត្តការងារ",
+  "nav.administration": "រដ្ឋបាល",
+  "nav.rolesPermissions": "តួនាទី និងសិទ្ធិ",
+  "nav.logout": "ចាកចេញ",
+  "logout.title": "ចាកចេញពី SteelForce?",
+  "logout.body": "អ្នកនឹងត្រលប់ទៅអេក្រង់ចូលប្រើវិញ។ ការផ្លាស់ប្តូរផែនការដែលមិនទាន់រក្សាទុកនៅតែមាននៅលើឧបករណ៍នេះ។",
+  "logout.done": "បានចាកចេញ",
+  "logout.doneDesc": "វគ្គប្រើប្រាស់របស់អ្នកត្រូវបានសម្អាត។",
+  "common.cancel": "បោះបង់",
+  "header.viewAllNotifications": "មើលការជូនដំណឹងទាំងអស់",
+  "page.products.title": "ផលិតផល",
+  "page.products.subtitle": "កាតាឡុក ប្រភេទ និងស្តុក",
+  "page.opportunities.title": "ឱកាសលក់",
+  "page.opportunities.subtitle": "តាមដានឱកាសលក់ដែលកំពុងបើក",
+  "page.field.title": "ប្រតិបត្តិការនៅតំបន់",
+  "page.field.subtitle": "ការចុះឈ្មោះចូល និងសកម្មភាពប្រចាំថ្ងៃ",
+  "page.reports.title": "របាយការណ៍",
+  "page.reports.subtitle": "ការវិភាគការលក់ ការទស្សនា និងការអនុវត្តការងារ",
+  "page.settings.title": "ការកំណត់",
+  "page.settings.subtitle": "ការកំណត់អង្គភាព និងវិបផតថល"
 }

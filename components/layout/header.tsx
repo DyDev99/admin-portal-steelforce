@@ -1,12 +1,14 @@
 'use client';
 
 import { Search, Bell, MessageSquare, ChevronRight, Menu, Command } from 'lucide-react';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { LanguageSwitcher } from '@/components/language-switcher';
 import { useI18n } from '@/lib/i18n';
+import { ProfileMenu } from '@/components/auth/profile-menu';
 
 export function Header({ onMenuClick }: { onMenuClick: () => void }) {
   const pathname = usePathname();
@@ -15,17 +17,32 @@ export function Header({ onMenuClick }: { onMenuClick: () => void }) {
 
   const pageMap: Record<string, { titleKey: string; subtitleKey: string }> = {
     '/dashboard': { titleKey: 'page.dashboard.title', subtitleKey: 'page.dashboard.subtitle' },
+    '/planning': { titleKey: 'page.planning.title', subtitleKey: 'page.planning.subtitle' },
     '/visits': { titleKey: 'page.visits.title', subtitleKey: 'page.visits.subtitle' },
     '/sales-reps': { titleKey: 'page.salesReps.title', subtitleKey: 'page.salesReps.subtitle' },
     '/orders': { titleKey: 'page.orders.title', subtitleKey: 'page.orders.subtitle' },
     '/quotations': { titleKey: 'page.quotations.title', subtitleKey: 'page.quotations.subtitle' },
     '/customers': { titleKey: 'page.customers.title', subtitleKey: 'page.customers.subtitle' },
+    '/opportunities': { titleKey: 'page.opportunities.title', subtitleKey: 'page.opportunities.subtitle' },
+    '/products': { titleKey: 'page.products.title', subtitleKey: 'page.products.subtitle' },
+    '/field': { titleKey: 'page.field.title', subtitleKey: 'page.field.subtitle' },
+    '/reports': { titleKey: 'page.reports.title', subtitleKey: 'page.reports.subtitle' },
+    '/settings': { titleKey: 'page.settings.title', subtitleKey: 'page.settings.subtitle' },
     '/user-management': { titleKey: 'um.title', subtitleKey: 'um.subtitle' },
     '/notifications': { titleKey: 'page.notifications.title', subtitleKey: 'page.notifications.subtitle' },
     '/profile': { titleKey: 'page.profile.title', subtitleKey: 'page.profile.subtitle' },
   };
 
-  const page = pageMap[pathname] || { titleKey: 'page.dashboard.title', subtitleKey: 'page.dashboard.subtitle' };
+  // Sub-routes (/planning/board, /user-management/users) should inherit their
+  // section's title, so fall back to the longest matching prefix.
+  const sectionKey = Object.keys(pageMap)
+    .filter((key) => pathname === key || pathname.startsWith(`${key}/`))
+    .sort((a, b) => b.length - a.length)[0];
+
+  const page = pageMap[sectionKey] || {
+    titleKey: 'page.dashboard.title',
+    subtitleKey: 'page.dashboard.subtitle',
+  };
   const pageTitle = t(page.titleKey);
 
   return (
@@ -127,6 +144,15 @@ export function Header({ onMenuClick }: { onMenuClick: () => void }) {
                         </div>
                       ))}
                     </div>
+                    {/* Notifications live in this menu rather than the sidebar,
+                        so the full page needs a way in from here. */}
+                    <Link
+                      href="/notifications"
+                      onClick={() => setShowNotif(false)}
+                      className="mt-2 pt-2.5 border-t border-surface flex items-center justify-center gap-1.5 text-[11.5px] font-medium text-primary hover:underline"
+                    >
+                      {t('header.viewAllNotifications')} <ChevronRight size={12} />
+                    </Link>
                   </motion.div>
                 </>
               )}
@@ -138,15 +164,7 @@ export function Header({ onMenuClick }: { onMenuClick: () => void }) {
 
           <div className="w-px h-8 bg-surface mx-1 hidden sm:block" />
 
-          <button className="flex items-center gap-2.5 pl-1 pr-2 sm:pr-3 py-1.5 rounded-xl hover:bg-accent/30 transition-all duration-200">
-            <div className="w-8 h-8 rounded-xl gradient-primary flex items-center justify-center shadow-md shadow-blue-200/50">
-              <span className="text-white text-xs font-bold">AR</span>
-            </div>
-            <div className="hidden sm:block text-left">
-              <p className="text-[12px] font-semibold text-main leading-tight">Ahmad Reza</p>
-              <p className="text-[10px] text-muted-foreground">{t('header.salesManager')}</p>
-            </div>
-          </button>
+          <ProfileMenu />
         </div>
       </div>
     </header>

@@ -18,6 +18,10 @@ const config: Config = {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+        // Single radius for every card, panel, toolbar and overlay surface.
+        // Previously inlined as `style={{ borderRadius: '18px' }}` in 22 places,
+        // which is how 18/20/16px variants crept in side by side.
+        card: '18px',
       },
       colors: {
         background: 'hsl(var(--background))',
