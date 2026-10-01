@@ -15,7 +15,7 @@
 
 # production
 /build
-
+/docs/system-design/ISI Group Design System
 # misc
 .DS_Store
 *.pem
@@ -35,3 +35,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local env backups / secrets
+.env.bak*
+env-portal-admin.txt
+
+# graphify local output
+graphify-out/
